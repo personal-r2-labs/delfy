@@ -1,11 +1,11 @@
 # Project Spotfind()
 
-##Introduction
+## Introduction
 
-##Structure
+## Structure
 
-##Technologies
+## Technologies
 
-##About
+## About
 
-##By
+## By
