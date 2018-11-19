@@ -6,14 +6,12 @@ const keys = require('./keys');
 const User = require('../models/user');
 
 passport.serializeUser((user, done) => {
-  console.log('serialize');
   done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then((user) => {
-      console.log('deserialize');
       done(null, user);
     });
 });
@@ -26,6 +24,7 @@ passport.use(
     callbackURL: '/auth/spotify/redirect'
   }, (accessToken, refreshToken, expires_in, profile, done) => {
     // check if user already exists in our db
+    console.log(profile);
     User.findOne({
       spotifyID: profile.id
     })

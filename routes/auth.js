@@ -13,13 +13,16 @@ router.route('/login')
   });
 
 router.get('/logout', (req, res) => {
-  res.send('logging out');
+  req.logout();
+  res.redirect('/');
 });
 
-router.get('/spotify', passport.authenticate('spotify'));
+router.get('/spotify', passport.authenticate('spotify', {
+  scope: ['user-read-email', 'user-read-private', 'playlist-read-private']
+}));
 
 router.get('/spotify/redirect', passport.authenticate('spotify'), (req, res) => {
   res.redirect('/profile');
-})
+});
 
 module.exports = router;
