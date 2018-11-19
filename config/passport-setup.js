@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable camelcase */
 /* eslint-disable no-undef */
 const passport = require('passport');
@@ -24,10 +25,11 @@ passport.use(
     callbackURL: '/auth/spotify/redirect'
   }, (accessToken, refreshToken, expires_in, profile, done) => {
     // check if user already exists in our db
-    console.log(profile);
-    User.findOne({
+    console.log(accessToken);
+    console.log(refreshToken);
+    User.findOneAndUpdate({
       spotifyID: profile.id
-    })
+    }, { accessToken, refreshToken })
       .then((currentUser) => {
         if (currentUser) {
           // already have the user
@@ -38,7 +40,12 @@ passport.use(
           const newUser = new User({
             username: profile.displayName,
             spotifyID: profile.id,
-            photoPath: profile.photos[0]
+            photoPath: profile.photos[0],
+            email: profile._json.email,
+            country: profile._json.country,
+            followers: profile._json.followers.total,
+            accessToken,
+            refreshToken
           });
           newUser.save().then(() => {
             console.log(`new user created: ${newUser}`);

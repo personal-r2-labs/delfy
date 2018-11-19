@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const express = require('express');
 const passport = require('passport');
+const keys = require('../config/keys');
 
 const router = express.Router();
 
@@ -18,7 +19,7 @@ router.get('/logout', (req, res) => {
 });
 
 router.get('/spotify', passport.authenticate('spotify', {
-  scope: ['user-read-email', 'user-read-private', 'playlist-read-private']
+  scope: keys.spotify.scope
 }));
 
 router.get('/spotify/redirect', passport.authenticate('spotify'), (req, res) => {
