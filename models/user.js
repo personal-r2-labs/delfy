@@ -5,17 +5,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  username: String,
+  name: String,
   password: String,
   spotifyID: String,
   photoPath: String,
+  birthdate: String,
+  product: String,
   email: String,
   accessToken: String,
   refreshToken: String,
-  genre: String,
   country: String,
+  topArtists: Array,
+  topAlbums: Array,
+  topTracks: Array,
   followers: Number
-
 }, {
   timestamps: {
     createdAt: 'created_at',

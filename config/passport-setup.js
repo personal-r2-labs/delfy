@@ -25,15 +25,15 @@ passport.use(
     callbackURL: '/auth/spotify/redirect'
   }, (accessToken, refreshToken, expires_in, profile, done) => {
     // check if user already exists in our db
-    console.log(accessToken);
-    console.log(refreshToken);
     User.findOneAndUpdate({
       spotifyID: profile.id
-    }, { accessToken, refreshToken })
+    }, {
+      accessToken,
+      refreshToken
+    })
       .then((currentUser) => {
         if (currentUser) {
           // already have the user
-          console.log('user is: ', currentUser);
           done(null, currentUser);
         } else {
           // if not, create user in our db
@@ -43,12 +43,16 @@ passport.use(
             photoPath: profile.photos[0],
             email: profile._json.email,
             country: profile._json.country,
+            product: profile._json.product,
             followers: profile._json.followers.total,
+            birthdate: profile._json.birthdate,
             accessToken,
             refreshToken
+            // topArtists,
+            // topAlbuns
           });
           newUser.save().then(() => {
-            console.log(`new user created: ${newUser}`);
+            // console.log(`new user created: ${newUser}`);
             done(null, newUser);
           });
         }
