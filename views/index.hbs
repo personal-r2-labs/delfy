@@ -1,4 +1,15 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<section class="container-fluid">
 
-<a class="btn btn-success" href="/auth/spotify">Sign In with Spotify Account</a>
+  <img src="https://images.pexels.com/photos/21022/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940" class="first-back-img"
+    alt="background-pic">
+
+  <div class="container message">
+    <p>Yo {{user.username}}, we believe we are made of what we listen to.</p>
+    <p>For that, we're builing a self knowledge experiment based on our spotify listening history.</p>
+    <p>We would love if you could share your Spotify account so we could train our models for an upcomming and totally
+      free service</p>
+    <p>One single click and we'll be able to move forward. Kind regards!</p>
+    <a class="btn btn-lg active spot-color row" href="/auth/spotify">Sign In with your Spotify Account</a>
+  </div>
+
+</section>
