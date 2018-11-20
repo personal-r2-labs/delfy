@@ -11,12 +11,17 @@ nav {
 .firstBack {
   background-image: url("https://images.pexels.com/photos/21022/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940");
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   overflow: hidden;
-  background-size: cover; }
+  background-size: cover;
+  top: 0;
+  left: 0;
+  z-index: -1; }
 
 .user-pic {
   border-radius: 50%;
-  margin: 0 auto; }
+  margin-bottom: 1em; }
 
 .message {
   color: black;
@@ -48,5 +53,15 @@ nav {
   background-color: #1DB954;
   color: #191414;
   margin-top: 20px; }
+
+footer {
+  margin-top: 100px; }
+
+.card-text2 {
+  margin-top: 0.7em; }
+
+.cards {
+  margin-top: 100px;
+  margin-bottom: 50px; }
 
 /*# sourceMappingURL=style.css.map */

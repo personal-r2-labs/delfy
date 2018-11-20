@@ -6,26 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/style.css"/>
 </head>
 
-<body class="m-0 p-0">
+<body class="m-0 p-0 height container-fluid">
 
- {{!--  <div class="container-fluid m-0 p-0">
-    <nav class="navbar navbar-expand-lg navbar-light mb-2">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/">Spotifind</a></li>
-        {{#if user}}
-        <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
-        <li class="nav-item"><a class="nav-link" href="/auth/logout">Logout</a></li>
-        {{else}}
-        <li class="nav-item"><a class="nav-link" href="/auth/login">Login</a></li>
-        {{/if}}
-      </ul>
-    </nav> --}}
-    
-    {{{body}}}
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-light mb-2 navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="/">{{title}}</a></li>
+      {{#if user}}
+      <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+      <li class="nav-item"><a class="nav-link" href="/auth/logout">Logout</a></li>
+      {{else}}
+      <li class="nav-item"><a class="nav-link" href="/auth/login">Login</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+
+  {{{body}}}
+
+  <footer class="navbar nav-bottom navbar-dark bg-dark nav justify-content-end">
+    <ul>
+      <li class="navbar-brand align-middle" href="#">About us</li>
+      <li class="navbar-brand align-middle" href="https://twitter.com/SpotifyPlatform">Spotify</li>
+      <li class="navbar-brand align-middle" href="https://www.ironhack.com/en">Ironhack</li>
+    </ul>
+  </footer>
+
 
   <script src="/javascripts/script.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
