@@ -71,6 +71,7 @@ nav {
 
 footer {
   margin-top: 100px;
+  margin-bottom: 0;
 }
 
 .card-text2 {
@@ -80,6 +81,19 @@ footer {
 .cards {
   margin-top: 100px;
   margin-bottom: 50px;
+}
+
+.cards-profile {
+  margin-top: 1em;
+}
+
+.engine {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.bigger-font-size {
+  font-size: 1.5em;
 }
 
 $grid-breakpoints: (
@@ -94,4 +108,5 @@ $container-max-widths: (
   md: 720px,
   lg: 960px
 ) 
+
 

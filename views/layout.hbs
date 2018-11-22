@@ -15,7 +15,7 @@
     <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link" href="/">{{title}}</a></li>
       {{#if user}}
-      <li class="nav-item"><a class="nav-link" href="/profile">Profile</a></li>
+      <li class="nav-item"><a class="nav-link d-none d-md-block d-xl-none" href="/profile">Profile</a></li>
       <li class="nav-item"><a class="nav-link" href="/auth/logout">Logout</a></li>
       {{else}}
       <li class="nav-item"><a class="nav-link" href="/auth/login">Login</a></li>
@@ -27,7 +27,7 @@
 
   <footer class="navbar nav-bottom navbar-dark bg-dark nav justify-content-end">
     <ul>
-      <li class="navbar-brand align-middle" ><a href="#">About us</a></li>
+      <li class="navbar-brand align-middle" ><a href="/about">About us</a></li>
       <li class="navbar-brand align-middle"><a href="https://twitter.com/SpotifyPlatform">Spotify</a></li>
       <li class="navbar-brand align-middle"><a href="https://www.ironhack.com/en">Ironhack</a></li>
     </ul>
