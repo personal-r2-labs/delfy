@@ -67,9 +67,10 @@ app.use(require('node-sass-middleware')({
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
+hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
 // default value for title local
-app.locals.title = 'SpotFind() - Which his musical persona, big monster?';
+app.locals.title = 'DelFy() - Your Musical Persona';
 
 app.use('/', index);
 app.use('/auth', auth);
